@@ -159,6 +159,12 @@ a:hover { text-decoration-color: var(--accent); }
   background: transparent; color: inherit;
   font: inherit; text-align: left; cursor: pointer;
   display: flex; flex-direction: column; gap: 0.65rem;
+  /* Safari's UA stylesheet centres the contents of <button>, which makes
+     flex children shrink-to-fit instead of stretching. The frame holds only
+     an absolutely-positioned image, so it shrank to 0 wide - and 0 wide at a
+     4:5 ratio is 0 tall, leaving the artwork invisible with the title still
+     showing. Both declarations below pin the width independently. */
+  align-items: stretch;
 }
 /* The 4:5 frame is held open by padding-top, which every browser supports.
    `aspect-ratio` is Safari 15+, and on older iPads it left the frame 0px
@@ -166,6 +172,7 @@ a:hover { text-decoration-color: var(--accent); }
    against and vanished. Modern browsers take the cleaner route below. */
 .card-frame {
   position: relative;
+  width: 100%;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius);
