@@ -18,6 +18,29 @@
 
 window.ARTWORKS = [
   {
+    src: "images/many-faces.jpg",
+    title: "Faces",
+    year: 2019,
+    medium: "Watercolour and ink on paper",
+    category: "Paintings",
+    alt: "Twelve small bald faces floating on a pale yellow ground, each washed in different warm colours - pinks, oranges, greens - with soft, open expressions."
+  },
+  {
+    src: "images/hands-over-face.jpg",
+    title: "Hands",
+    year: 2019,
+    medium: "Watercolour and gouache on paper",
+    category: "Paintings",
+    alt: "A pink and blue face against a near-black ground, two long hands covering the cheeks, with red paint running down between the fingers like tears."
+  },
+  {
+    src: "images/line-drawing.jpg",
+    title: "Continuous Line",
+    medium: "Ink on paper",
+    category: "Drawings",
+    alt: "A face and trailing leaves drawn in a single unbroken ink line on white paper."
+  },
+  {
     src: "images/she-keeps-me-warm.jpg",
     title: "She Keeps Me Warm",
     medium: "Watercolour and colour pencil on paper",

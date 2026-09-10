@@ -520,3 +520,37 @@ body.lb-open { overflow: hidden; }
   .lb-next { right: 50%; margin-right: -3.25rem; }
   .lb-figure img { max-height: 62vh; }
 }
+
+/* ---------- photo grids on project pages ---------- */
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  gap: var(--gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Same white mount as the artwork thumbnails: the source photos are square
+   with white padding baked in, so letterboxing disappears into the mount
+   instead of showing as grey bars. */
+.photos li {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  padding-top: 100%;
+}
+@supports (aspect-ratio: 1 / 1) {
+  .photos li { padding-top: 0; aspect-ratio: 1 / 1; }
+}
+.photos img {
+  position: absolute;
+  top: 4%; left: 4%;
+  width: 92%; height: 92%;
+  object-fit: contain;
+  object-position: center;
+}
