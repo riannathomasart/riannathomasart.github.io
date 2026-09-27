@@ -7,18 +7,13 @@
 :root {
   color-scheme: light;   /* the site is light-only now */
 
-  --bg:        #faf6ee;  /* warm paper */
-  --bg-sunk:   #f1ebdf;  /* recessed panels: image frames, portrait */
+  --bg:        #ffffff;  /* plain white */
+  --bg-sunk:   #f2f2f2;  /* recessed panels: image frames, portrait */
   --fg:        #000000;
   --fg-muted:  #000000;  /* all type is black — hierarchy comes from size/weight */
-  --header-bg: #f9f5f2;  /* flat tone matching the paper, for the sticky header */
-  --line:      #cdc2ac;
+  --header-bg: #ffffff;  /* matches the page, for the sticky header */
+  --line:      #cccccc;
   --accent:    #000000;
-
-  /* Scanned watercolour paper, laid over the whole viewport as one sheet
-     rather than tiled — no repeat seams, and the grain stays crisp however
-     long the page is. Path is relative to this stylesheet. */
-  --paper: url("../../images/paper.jpg");
 
   --font-title:   "Amarante", "Luminari", Georgia, serif;   /* art nouveau display — page titles only */
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
@@ -39,26 +34,12 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  position: relative;      /* containing block for the paper layer */
-  min-height: 100vh;       /* paper still covers a short page */
   background-color: var(--bg);
   color: var(--fg);
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-}
-
-/* The paper itself: a layer spanning the whole document, so it scrolls with
-   the content. Sized to the page width and repeated downwards. */
-body::before {
-  content: "";
-  position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: -1;
-  background-color: var(--bg);
-  background-image: var(--paper);
-  background-size: 100% auto;
-  background-repeat: repeat-y;
-  background-position: top center;
 }
 
 img { max-width: 100%; display: block; }
@@ -239,9 +220,6 @@ a:hover { text-decoration-color: var(--accent); }
   position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 50;
   display: grid; place-items: center;
   background-color: var(--bg);
-  background-image: var(--paper);
-  background-size: cover;
-  background-position: center;
   padding: clamp(1rem, 4vw, 3rem);
 }
 .lightbox[hidden] { display: none; }
@@ -472,6 +450,7 @@ body.lb-open { overflow: hidden; }
 .project-body p { max-width: 64ch; }
 .project-points { margin: 0; padding-left: 1.1rem; }
 .project-points li { max-width: 64ch; margin-bottom: 0.5rem; }
+.project-more { margin: 0; font-size: 0.95rem; }
 
 /* ---------- embedded video ---------- */
 
@@ -506,9 +485,6 @@ body.lb-open { overflow: hidden; }
 /* ---------- phones ---------- */
 
 @media (max-width: 700px) {
-  /* A lighter sheet: 69KB instead of 274KB, plenty at this size. */
-  :root { --paper: url("../../images/paper-1000.jpg"); }
-
   /* On a narrow screen the side arrows sat on top of the artwork. Put them
      in a row beneath it instead, where they clear the image entirely. */
   .lightbox { align-content: center; }
