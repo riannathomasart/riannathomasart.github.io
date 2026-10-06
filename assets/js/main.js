@@ -190,10 +190,10 @@
     return src.replace(/\.jpg$/i, "-800.jpg");
   }
 
+  // No srcset here: the lightbox always shows the full 1600px file.
   function itemOf(work) {
     return {
       src:    work.src,
-      srcset: smallOf(work.src) + " 800w, " + work.src + " 1600w",
       alt:    altOf(work),
       title:  work.title || "Untitled",
       meta:   metaOf(work)

@@ -56,6 +56,21 @@ file means phones download the full-size image. From the images folder:
 sips -Z 800 -s format jpeg -s formatOptions 62 name.jpg --out name-800.jpg
 ```
 
+Then watermark both copies. Keep clean copies outside the repo first (the
+existing ones are in `~/Documents/art/website clean copies`) and always mark
+from those, so the marks never stack:
+
+```bash
+cp images/name.jpg images/name-800.jpg ~/Documents/art/"website clean copies"/
+for f in name name-800; do
+  swift tools/watermark.swift ~/Documents/art/"website clean copies"/$f.jpg images/$f.jpg
+done
+```
+
+The script places the mark across the edge of the artwork itself, partly on
+the art and partly on the paper. Photos by other people, such as the
+exhibition shots, are not marked.
+
 ## Cache busting
 
 The stylesheet is linked as `styles.css?v=2`. Bump that number in every HTML
