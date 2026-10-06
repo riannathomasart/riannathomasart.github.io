@@ -173,9 +173,11 @@
     return work.category || "Other";
   }
 
-  // "2025 · Oil on canvas · 60 × 80 cm"
+  // "Oil on canvas · 60 × 80 cm"
+  // Years are kept in artworks.js but hidden for now. To show them again,
+  // put work.year back at the start of this list.
   function metaOf(work) {
-    return [work.year, work.medium, work.size].filter(Boolean).join(" · ");
+    return [work.medium, work.size].filter(Boolean).join(" · ");
   }
 
   function altOf(work) {
@@ -281,7 +283,7 @@
   renderGrid(visible);
 
   // Arriving at index.html#contact from another page, the browser jumps to the
-  // anchor before this script has built the gallery — which then pushes the
+  // anchor before this script has built the gallery - which then pushes the
   // target hundreds of pixels further down. Re-aim once the cards are in.
   if (location.hash) {
     var target = document.getElementById(location.hash.slice(1));

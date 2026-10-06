@@ -1,5 +1,5 @@
 /* ---------------------------------------------------------------
-   Rianna Thomas — portfolio
+   Rianna Thomas - portfolio
    Tokens first, then layout, then components. Edit tokens to
    re-skin the whole site.
    --------------------------------------------------------------- */
@@ -10,12 +10,12 @@
   --bg:        #ffffff;  /* plain white */
   --bg-sunk:   #f2f2f2;  /* recessed panels: image frames, portrait */
   --fg:        #000000;
-  --fg-muted:  #000000;  /* all type is black — hierarchy comes from size/weight */
+  --fg-muted:  #000000;  /* all type is black - hierarchy comes from size/weight */
   --header-bg: #ffffff;  /* matches the page, for the sticky header */
   --line:      #cccccc;
   --accent:    #000000;
 
-  --font-title:   "Amarante", "Luminari", Georgia, serif;   /* art nouveau display — page titles only */
+  --font-title:   "Amarante", "Luminari", Georgia, serif;   /* art nouveau display - page titles only */
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-body:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 
@@ -90,8 +90,15 @@ a:hover { text-decoration-color: var(--accent); }
   font-weight: 400;
   font-size: clamp(2.5rem, 8vw, 5rem);
   line-height: 1.1;
-  margin: 0 0 1.1rem;
+  margin: 0 0 0.5rem;
   letter-spacing: 0.005em;
+}
+.hero-subtitle {
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-size: clamp(1.35rem, 3.5vw, 2rem);
+  line-height: 1.2;
+  margin: 0 0 1.1rem;
 }
 .hero-lede {
   max-width: 46ch; margin: 0;
@@ -332,7 +339,7 @@ body.lb-open { overflow: hidden; }
   color: var(--fg);
 }
 
-/* small labelled blocks — "Currently", "Materials", etc. */
+/* small labelled blocks - "Currently", "Materials", etc. */
 .facts {
   display: grid; gap: 1.25rem;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));

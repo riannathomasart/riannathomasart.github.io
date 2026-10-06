@@ -1,12 +1,12 @@
 # riannathomasart.github.io
 
-Portfolio site for Rianna Thomas. Plain HTML/CSS/JS — no build step, no
+Portfolio site for Rianna Thomas. Plain HTML/CSS/JS - no build step, no
 dependencies. GitHub Pages serves it straight from the repo root.
 
 ## Layout
 
 ```
-index.html            home — hero, gallery, contact
+index.html            home - hero, gallery, contact
 about.html            about page
 cv.html               cv page
 projects.html         projects index (the "Projects" nav item)
@@ -17,8 +17,8 @@ assets/css/styles.css all styling (design tokens live at the top)
 assets/js/artworks.js the gallery contents  <- edit this to add work
 assets/js/main.js     rendering, filters, lightbox
 images/               artwork files, each at two sizes: name.jpg (1600px) and
-                      name-800.jpg, served via srcset. Plus paper.jpg and
-                      paper-1000.jpg for the background.
+                      name-800.jpg, served via srcset. paper.jpg and
+                      paper-1000.jpg are the old background, now unused.
 .nojekyll             tells GitHub Pages to serve the files as-is
 ```
 
@@ -39,14 +39,14 @@ images/               artwork files, each at two sizes: name.jpg (1600px) and
 }
 ```
 
-Only `src` and `title` are required. `category` drives the filter buttons —
+Only `src` and `title` are required. `category` drives the filter buttons -
 the bar hides itself if everything shares one category. Order in the file is
 the order on the page.
 
-Photos are loaded at full size, so resize them before committing — roughly
+Photos are loaded at full size, so resize them before committing - roughly
 1600px on the long edge is plenty, and keeps the page quick.
 
-## Adding a piece — the two sizes
+## Adding a piece: the two sizes
 
 Every artwork needs both `name.jpg` (1600px long edge) and `name-800.jpg`;
 `main.js` builds the `srcset` from that naming convention, so a missing -800
@@ -76,17 +76,14 @@ Then open <http://localhost:8000>.
 - `.nojekyll` disables Jekyll processing, so the leftover `_config.yml`
   (minimal theme) is inert and can be deleted.
 - Colours, fonts and spacing are CSS custom properties at the top of
-  `styles.css`. The site is light-only. The background is `images/paper.jpg`,
-  a scanned sheet of watercolour paper (from Pexels), referenced by the
-  `--paper` token and painted as one fixed, viewport-covering layer via
-  `body::before` — so it never tiles and never shows a repeat seam. `--bg` is
-  the flat colour behind it.
+  `styles.css`. The site is light-only, on a plain white background (`--bg`),
+  with neutral grey frames (`--bg-sunk`) and borders (`--line`).
 - All type is `#000`, including secondary text, so hierarchy rests on size
   and weight rather than colour.
 - Page titles and the wordmark use Amarante (art nouveau display) via
   `--font-title`; body text stays in Inter so it remains readable. Change the
   one token in `styles.css` to re-style every title at once.
-- The header and footer are duplicated across the seven pages — there's no
+- The header and footer are duplicated across the seven pages - there's no
   templating. Edit a nav link in one place, edit it in all seven.
 - Thumbnails use `object-fit: contain` inside a padded white mount, so
   landscape and portrait pieces both show whole rather than being cropped to
@@ -96,5 +93,5 @@ Then open <http://localhost:8000>.
 - The stylesheet and the two JS files carry `?v=` version parameters. Bump
   them whenever you change those files, or returning visitors keep the old
   ones.
-  In `artworks.js`, the titles and media are inferred — check them, and add
+  In `artworks.js`, the titles and media are inferred - check them, and add
   sizes.
