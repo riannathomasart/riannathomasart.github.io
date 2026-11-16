@@ -7,17 +7,21 @@
 :root {
   color-scheme: light;   /* the site is light-only now */
 
-  --bg:        #ffffff;  /* plain white */
-  --bg-sunk:   #f2f2f2;  /* recessed panels: image frames, portrait */
-  --fg:        #000000;
-  --fg-muted:  #000000;  /* all type is black - hierarchy comes from size/weight */
-  --header-bg: #ffffff;  /* matches the page, for the sticky header */
-  --line:      #cccccc;
-  --accent:    #000000;
+  /* "Cosy cottage" palette: toasted cream, ember brown and moss green */
+  --bg:        #efe2c8;  /* toasted cream */
+  --bg-sunk:   #e6d4b2;  /* recessed panels: video, portrait */
+  --fg:        #3a2716;  /* dark walnut - all body text */
+  --fg-muted:  #5a4330;
+  --header-bg: #efe2c8;  /* matches the page, for the sticky header */
+  --line:      #c4a57c;  /* light wood */
+  --line-strong: #8a5a34;/* dark wood - artwork frames */
+  --accent:    #7a3f22;  /* ember */
+  --moss:      #4f6b3a;
+  --mount:     #ffffff;  /* inside the frames, kept white so paper edges blend in */
 
   --font-title:   "Amarante", "Luminari", Georgia, serif;   /* art nouveau display - page titles only */
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
-  --font-body:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:    "Lora", Georgia, "Times New Roman", serif;
 
   --wrap:   1180px;
   --gap:    clamp(0.9rem, 2vw, 1.6rem);
@@ -94,7 +98,9 @@ a:hover { text-decoration-color: var(--accent); }
   letter-spacing: 0.005em;
 }
 .hero-subtitle {
-  font-family: var(--font-title);
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--moss);
   font-weight: 400;
   font-size: clamp(1.35rem, 3.5vw, 2rem);
   line-height: 1.2;
@@ -161,9 +167,10 @@ a:hover { text-decoration-color: var(--accent); }
 .card-frame {
   position: relative;
   width: 100%;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
+  background: var(--mount);
+  border: 4px double var(--line-strong);
+  /* An arch: the top corners curve into a rounded top like a cottage window. */
+  border-radius: 46% 46% var(--radius) var(--radius) / 28% 28% var(--radius) var(--radius);
   overflow: hidden;
   padding-top: 125%;
 }
@@ -172,8 +179,9 @@ a:hover { text-decoration-color: var(--accent); }
 }
 .card-frame img {
   position: absolute;
-  top: 6%; left: 6%;
-  width: 88%; height: 88%;
+  /* Inset enough that the arch never clips the corners of the artwork. */
+  top: 14%; left: 10%;
+  width: 80%; height: 80%;
   object-fit: contain;
   object-position: center;
   transition: transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1), opacity 300ms;
@@ -181,7 +189,7 @@ a:hover { text-decoration-color: var(--accent); }
 .card:hover .card-frame img,
 .card:focus-visible .card-frame img { transform: scale(1.035); }
 
-.card-title { font-family: var(--font-display); font-size: 1rem; margin: 0; }
+.card-title { font-family: var(--font-display); font-size: 1rem; margin: 0; color: var(--accent); }
 .card-meta { color: var(--fg-muted); font-size: 0.85rem; margin: 0; }
 
 .empty { color: var(--fg-muted); padding-block: 2rem; }
@@ -521,7 +529,7 @@ body.lb-open { overflow: hidden; }
 .photos li {
   position: relative;
   width: 100%;
-  background: #fff;
+  background: var(--mount);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
@@ -563,4 +571,26 @@ body.lb-open { overflow: hidden; }
   user-select: none;
   -webkit-user-drag: none;
   pointer-events: none;
+}
+
+/* ---------- climbing vines ---------- */
+
+/* Original hand-drawn vines, with heart-shaped leaves after Rianna's
+   "Vines", trailing down both sides of the page. They sit behind all the
+   content (z-index -1 on a fixed layer) and only appear on screens wide
+   enough to have empty margins, so they never run under text or artwork. */
+@media (min-width: 1300px) {
+  body::before, body::after {
+    content: "";
+    position: fixed; top: 0; bottom: 0;
+    width: 120px;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='420' viewBox='0 0 120 420'%3E%3Cg fill='none' stroke='%235c7a3e' stroke-linecap='round'%3E%3Cpath stroke-width='2.4' d='M60 0C30 50 90 90 60 140S30 230 60 280 90 370 60 420'/%3E%3Cpath stroke-width='1.3' d='M70 96c10 2 16 10 12 18-3 6-11 5-11-1 0-4 5-5 6-2'/%3E%3Cpath stroke-width='1.3' d='M48 236c-10 2-16 10-12 18 3 6 11 5 11-1 0-4-5-5-6-2'/%3E%3Cpath stroke-width='1.3' d='M70 376c10 2 16 10 12 18-3 6-11 5-11-1 0-4 5-5 6-2'/%3E%3C/g%3E%3Cg fill='%236f8f4a' stroke='%233f5a2a' stroke-width='1'%3E%3Cpath transform='translate(76 56) rotate(-115)' d='M0 0C-6-10-18-8-16 4-14 14-4 20 0 26 4 20 14 14 16 4 18-8 6-10 0 0Z'/%3E%3Cpath transform='translate(64 130) rotate(110) scale(.8)' d='M0 0C-6-10-18-8-16 4-14 14-4 20 0 26 4 20 14 14 16 4 18-8 6-10 0 0Z'/%3E%3Cpath transform='translate(43 196) rotate(115)' d='M0 0C-6-10-18-8-16 4-14 14-4 20 0 26 4 20 14 14 16 4 18-8 6-10 0 0Z'/%3E%3Cpath transform='translate(56 266) rotate(-110) scale(.8)' d='M0 0C-6-10-18-8-16 4-14 14-4 20 0 26 4 20 14 14 16 4 18-8 6-10 0 0Z'/%3E%3Cpath transform='translate(76 336) rotate(-115)' d='M0 0C-6-10-18-8-16 4-14 14-4 20 0 26 4 20 14 14 16 4 18-8 6-10 0 0Z'/%3E%3Cpath transform='translate(62 404) rotate(115) scale(.75)' d='M0 0C-6-10-18-8-16 4-14 14-4 20 0 26 4 20 14 14 16 4 18-8 6-10 0 0Z'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat-y;
+  }
+  body::before { left: 0; }
+  /* Mirrored and offset on the right so the two sides don't match exactly. */
+  body::after { right: 0; transform: scaleX(-1); background-position: 0 190px; }
 }
