@@ -33,7 +33,7 @@ window.ARTWORKS = [
   },
   {
     src: "images/many-faces.jpg",
-    title: "Faces",
+    title: "Untitled",
     year: 2018,
     medium: "Watercolour and ink on paper",
     category: "Paintings",
@@ -41,7 +41,7 @@ window.ARTWORKS = [
   },
   {
     src: "images/hands-over-face.jpg",
-    title: "Hands",
+    title: "Untitled",
     year: 2019,
     medium: "Watercolour and gouache on paper",
     category: "Paintings",
@@ -73,6 +73,7 @@ window.ARTWORKS = [
   {
     src: "images/strawberries.jpg",
     title: "Strawberries",
+    year: 2020,
     medium: "Mixed media",
     category: "Paintings",
     alt: "A serene face with closed eyes painted in yellow, green and red, framed above and below by a wreath of strawberry plants."
