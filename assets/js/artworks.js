@@ -19,6 +19,7 @@ window.ARTWORKS = [
   {
     src: "images/she-keeps-me-warm.jpg",
     title: "She Keeps Me Warm",
+    year: 2019,
     medium: "Watercolour and colour pencil on paper",
     category: "Paintings",
     alt: "Two figures in warm reds, oranges and yellows holding each other closely, one resting against the other's shoulder."
