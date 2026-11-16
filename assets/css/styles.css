@@ -572,25 +572,3 @@ body.lb-open { overflow: hidden; }
   -webkit-user-drag: none;
   pointer-events: none;
 }
-
-/* ---------- greenery flourishes ---------- */
-
-/* A few small, original sprigs of greenery tucked into the page margins,
-   faded right back. Two designs (an upright sprig and an arching branch)
-   are placed at different heights on each side; the right side is mirrored.
-   They sit behind all the content (z-index -1 on a fixed layer) and only
-   appear on screens wide enough to have empty margins. */
-@media (min-width: 1300px) {
-  body::before, body::after {
-    content: "";
-    position: fixed; top: 0; bottom: 0;
-    width: 140px;
-    z-index: -1;
-    pointer-events: none;
-    opacity: 0.38;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='120' viewBox='0 0 90 120'%3E%3Cg fill='none' stroke='%235c7a3e' stroke-linecap='round'%3E%3Cpath stroke-width='2' d='M45 116C40 86 52 56 44 22C42 13 46 7 52 4'/%3E%3Cpath stroke-width='1.2' d='M47 70c8-2 14-8 12-14-2-5-8-3-6 1'/%3E%3C/g%3E%3Cg fill='%236f8f4a' stroke='%233f5a2a' stroke-width='1.2'%3E%3Cpath transform='translate(42 98) rotate(130) scale(0.7)' d='M0 0C-9 7-10 19 0 30 10 19 9 7 0 0Z'/%3E%3Cpath transform='translate(46 80) rotate(-130) scale(0.7)' d='M0 0C-9 7-10 19 0 30 10 19 9 7 0 0Z'/%3E%3Cpath transform='translate(48 62) rotate(130) scale(0.65)' d='M0 0C-9 7-10 19 0 30 10 19 9 7 0 0Z'/%3E%3Cpath transform='translate(47 46) rotate(-130) scale(0.6)' d='M0 0C-9 7-10 19 0 30 10 19 9 7 0 0Z'/%3E%3Cpath transform='translate(45 30) rotate(135) scale(0.55)' d='M0 0C-9 7-10 19 0 30 10 19 9 7 0 0Z'/%3E%3Cpath transform='translate(52 6) rotate(-150) scale(0.45)' d='M0 0C-9 7-10 19 0 30 10 19 9 7 0 0Z'/%3E%3C/g%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='110' height='70' viewBox='0 0 110 70'%3E%3Cg fill='none' stroke='%235c7a3e' stroke-linecap='round'%3E%3Cpath stroke-width='2' d='M5 62C30 52 55 32 100 20'/%3E%3Cpath stroke-width='1.2' d='M62 32c2-8 9-12 14-9 4 3 1 8-2 6'/%3E%3C/g%3E%3Cg fill='%236f8f4a' stroke='%233f5a2a' stroke-width='1.2'%3E%3Cpath transform='translate(24 54) rotate(165) scale(0.6)' d='M0 0C-9 7-10 19 0 30 10 19 9 7 0 0Z'/%3E%3Cpath transform='translate(38 47) rotate(15) scale(0.6)' d='M0 0C-9 7-10 19 0 30 10 19 9 7 0 0Z'/%3E%3Cpath transform='translate(52 39) rotate(165) scale(0.58)' d='M0 0C-9 7-10 19 0 30 10 19 9 7 0 0Z'/%3E%3Cpath transform='translate(68 31) rotate(15) scale(0.55)' d='M0 0C-9 7-10 19 0 30 10 19 9 7 0 0Z'/%3E%3Cpath transform='translate(84 25) rotate(165) scale(0.5)' d='M0 0C-9 7-10 19 0 30 10 19 9 7 0 0Z'/%3E%3Cpath transform='translate(100 20) rotate(-105) scale(0.45)' d='M0 0C-9 7-10 19 0 30 10 19 9 7 0 0Z'/%3E%3C/g%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-  }
-  body::before { left: 0; background-position: 30px 16%, 14px 68%; }
-  body::after  { right: 0; transform: scaleX(-1); background-position: 22px 44%, 30px 90%; }
-}
