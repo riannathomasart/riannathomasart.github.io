@@ -11,9 +11,8 @@
      category optional - drives the filter buttons; omit for "Other"
      alt      optional - described for screen readers; falls back to title
 
-   NOTE: titles and media below were inferred from the images. Years are
-   taken from signatures/dates visible in the work itself. Correct anything
-   that's wrong, and add sizes - those can't be read off a scan.
+   NOTE: titles, media and years below were checked by Rianna in
+   November 2026. Sizes still need adding - they can't be read off a scan.
    --------------------------------------------------------------- */
 
 window.ARTWORKS = [
@@ -35,7 +34,7 @@ window.ARTWORKS = [
   {
     src: "images/many-faces.jpg",
     title: "Faces",
-    year: 2019,
+    year: 2018,
     medium: "Watercolour and ink on paper",
     category: "Paintings",
     alt: "Twelve small bald faces floating on a pale yellow ground, each washed in different warm colours - pinks, oranges, greens - with soft, open expressions."
