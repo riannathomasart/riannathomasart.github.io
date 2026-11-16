@@ -50,6 +50,7 @@ window.ARTWORKS = [
   {
     src: "images/line-drawing.jpg",
     title: "Continuous Line",
+    year: 2020,
     medium: "Ink on paper",
     category: "Drawings",
     alt: "A face and trailing leaves drawn in a single unbroken ink line on white paper."
