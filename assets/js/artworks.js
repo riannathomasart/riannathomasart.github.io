@@ -85,24 +85,26 @@ window.ARTWORKS = [
     alt: "A bold black and white linocut of a bumblebee seen from above, its wings outstretched, surrounded by carved rays radiating outwards."
   },
 
-  // The "Untitled" works were added from the "gallery images" folder. Their
-  // titles are placeholders until Rianna names them; media are left out
-  // rather than guessed.
+  // These five works were added from the "gallery images" folder. Rianna
+  // named them and gave their media in November 2026.
   {
     src: "images/eyes-and-flowers.jpg",
-    title: "Untitled",
+    title: "Watch Me Bloom",
+    medium: "Watercolour, colour pencil and ink on paper",
     category: "Paintings",
     alt: "Two blue eyes on white paper with bright flowers - orange, red, yellow, a blue pansy, a pink tulip and purple lavender - growing up from the lids, and green vines trailing down from the lashes like tears."
   },
   {
     src: "images/drips.jpg",
-    title: "Untitled",
+    title: "Evanesce",
+    medium: "Watercolour on paper",
     category: "Paintings",
     alt: "An abstract wash of pink, violet and ochre, the colours bleeding into each other and running down the paper in long drips."
   },
   {
     src: "images/gold-tears.jpg",
-    title: "Untitled",
+    title: "Not Safe",
+    medium: "Watercolour, colour pencil, ink and metallic acrylic on paper",
     year: 2019,
     category: "Drawings",
     alt: "A round bald face sketched in green, yellow and blue pencil with gold tears running from both eyes, the words 'You know we aren't safe here? We never were' curving around the head."
@@ -117,13 +119,15 @@ window.ARTWORKS = [
   },
   {
     src: "images/orange-bands.jpg",
-    title: "Untitled",
+    title: "Duplicitous",
+    medium: "Watercolour, colour pencil and ink on paper",
     category: "Paintings",
     alt: "A face with green eyes and smudged blue and violet shadows, framed above and below by curved orange bands, thin red lines running down across it."
   },
   {
     src: "images/axolotl.jpg",
-    title: "Untitled",
+    title: "Axolotl",
+    medium: "Watercolour, colour pencil and ink on paper",
     category: "Paintings",
     alt: "An axolotl seen from above, its yellow-orange body speckled with black and its feathery gills red, on a green ground dappled with the shadows of leaves."
   }
